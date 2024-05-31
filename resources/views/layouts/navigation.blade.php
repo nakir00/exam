@@ -15,6 +15,13 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('sondage.first.index')" :active="request()->routeIs('sondage.first.index')">
+                        Sondage no1
+                    </x-nav-link>
+                    <x-nav-link :href="route('sondage.second')" :active="request()->routeIs('sondage.second')">
+                        Sondage no2
+                    </x-nav-link>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -18,6 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'prename',
+        'classe',
+        'ecole',
+        'adresse',
+        'domaine',
+        'niveau',
+        'numero',
         'email',
         'password',
     ];
@@ -43,5 +51,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+   /**
+     * Get the answer for the blog post.
+     */
+    public function answers(): HasMany
+    {
+        return $this->hasMany(SondageFirst::class);
     }
 }
